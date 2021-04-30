@@ -50,4 +50,6 @@ const fruits = [
   
 ]
 
+console.log(fruits)
+
 module.exports = fruits
