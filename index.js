@@ -24,12 +24,15 @@ app.get('/five', (req, res) => {
 
 app.get('/evens/:n', async (req, res) => {
   try {
-    const { id } = req.params
-    const product = await Product.findById(id)
-    if (!product) throw Error('Product not found')
-    res.json(product)
+
+    const { n } = req.params;
+    
+    for (let i = 0; i <= parseInt(n); i++) {
+      let evenArray = [];
+        if (i % 2 === 0) evenArray.push(i);
+    }
+    res.send(evenArray);
   } catch (e) {
-    console.log(e)
-    res.send('Product not found')
+    res.send('Number not found! Please enter number at end of route.')
   }
 })
